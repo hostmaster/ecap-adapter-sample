@@ -1,0 +1,63 @@
+v0.2.0
+2011/02/20
+
+	Support libecap v0.2.0:
+
+	- Changed Service::re/configure() profile to use
+	  libecap::Options.
+
+	- Added empty Xaction::option() and Xaction::visitEachOption()
+	  methods.
+
+	Require libecap v0.2 at ./configure time. This prevents
+	accidentally building adapters with the wrong libecap version.
+
+	Use pkg-config for building with libecap.
+
+	Specify libecap link options in *_LDFLAGS (instead of *_LIBADD)
+	because automake documentation seems to recommend that.
+
+
+v0.1.0
+2011/01/10
+
+	General:
+
+	- Use libecap::Config type name to become compatible with
+	  libecap v0.1.0.
+
+	- Polished code formatting.
+
+
+	Modifying Adapter:
+
+	- Use libecap::Config::visitEach() method to configure the
+	  adapter using host-provided victim and replacement values.
+	  Illustrate basic configuration validation technique.
+	
+	- Allow victim string to be a part of the replacement string by
+	  not searching the replaced string for the next victim start.
+
+
+v0.0.3
+2010/12/05
+
+	- Fixed lp bug #320530: Chunks don't get concatenated correctly.
+
+	- Fixed lp bug #338137: Sample adapters may prevent host from
+	  retrieving entire adapted body.
+
+	- Fixed lp bug #362069: Properly set receivingVb when
+	  Adapter::Xaction::noteVbContentDone is called. The bug has no known
+	  effect on sample adapters but may be affecting the real adapters
+	  based on the sample ones.
+
+	- Do not call vbDiscard to stop virgin body production in Modifying
+	  Adapter. Call vbStopMaking instead.  vbDiscard is for informing the
+	  host that the adapter will never access the virgin body.
+
+
+v0.0.2
+2008/09/30
+
+	- First public release.

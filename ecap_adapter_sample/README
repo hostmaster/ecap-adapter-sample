@@ -1,0 +1,27 @@
+This Software is a collection of simple eCAP adapters.
+The adapters illustrate eCAP usage but are not be suitable for production use.
+
+Available adapters (installed in /usr/local/lib/ by default):
+
+    minimal: refuses to adapt any message without looking at the message body
+             uses "minimal" implementation we could come up with
+             installed as ecap_adapter_minimal.*
+
+    passthru: refuses to adapt any message but receives and echoes back
+              the entire message body, if any
+              installed as ecap_adapter_passthru.*
+
+    modifying: modifiers headers and, if possible, the body of any message
+               illustrates header and body manipulation and body accumulation
+               installed as ecap_adapter_modifying.*
+
+The libecap library is required to build and use these adapters. You can get
+the library from http://www.e-cap.org/. The adapters can be built and
+installed from source, usually by running:
+
+    % ./configure
+    % make
+    % make install
+
+For documentation, the libecap library implementation, and support
+information, please visit the eCAP project web site: http://www.e-cap.org/
