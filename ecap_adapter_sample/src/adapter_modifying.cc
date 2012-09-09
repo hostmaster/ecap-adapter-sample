@@ -6,7 +6,6 @@
 #include <libecap/common/header.h>
 #include <libecap/common/names.h>
 #include <libecap/common/named_values.h>
-#include <libecap/common/config.h>
 #include <libecap/host/host.h>
 #include <libecap/adapter/service.h>
 #include <libecap/adapter/xaction.h>
